@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import {
   BarChart,
   Bar,
@@ -23,36 +24,47 @@ function Statistics() {
   });
 
   useEffect(() => {
-    const storedGames = JSON.parse(localStorage.getItem('games')) || [];
-    setGames(storedGames);
+    const fetchGames = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/games');
+        const storedGames = response.data;
 
-    const totalGames = storedGames.length;
-    let wins = 0, draws = 0, losses = 0;
-    let goalsFor = 0, goalsAgainst = 0;
+        setGames(storedGames);
 
-    storedGames.forEach((game) => {
-      const our = parseInt(game.ourScore);
-      const opponent = parseInt(game.opponentScore);
+        const totalGames = storedGames.length;
+        let wins = 0, draws = 0, losses = 0;
+        let goalsFor = 0, goalsAgainst = 0;
 
-      goalsFor += our;
-      goalsAgainst += opponent;
+        storedGames.forEach((game) => {
+          const our = parseInt(game.ourScore);
+          const opponent = parseInt(game.opponentScore);
 
-      if (our > opponent) wins++;
-      else if (our === opponent) draws++;
-      else losses++;
-    });
+          goalsFor += our;
+          goalsAgainst += opponent;
 
-    const avgGoals = totalGames ? (goalsFor / totalGames).toFixed(2) : 0;
+          if (our > opponent) wins++;
+          else if (our === opponent) draws++;
+          else losses++;
+        });
 
-    setStats({
-      totalGames,
-      wins,
-      draws,
-      losses,
-      goalsFor,
-      goalsAgainst,
-      avgGoals,
-    });
+        const avgGoals = totalGames ? (goalsFor / totalGames).toFixed(2) : 0;
+
+        setStats({
+          totalGames,
+          wins,
+          draws,
+          losses,
+          goalsFor,
+          goalsAgainst,
+          avgGoals,
+        });
+      } catch (error) {
+        console.error('Erro ao buscar os jogos:', error);
+        alert('Erro ao buscar os jogos. Verifique se o backend está rodando.');
+      }
+    };
+
+    fetchGames();
   }, []);
 
   return (

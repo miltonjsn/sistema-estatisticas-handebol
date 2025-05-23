@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 function RegisterGame() {
   const [formData, setFormData] = useState({
@@ -13,28 +14,25 @@ function RegisterGame() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Recupera os jogos salvos anteriormente (ou inicia com array vazio)
-    const storedGames = JSON.parse(localStorage.getItem('games')) || [];
+    try {
+      await axios.post('http://localhost:5000/games', formData);
+      alert('Jogo salvo com sucesso!');
 
-    // Adiciona o novo jogo ao array
-    const updatedGames = [...storedGames, formData];
-
-    // Salva novamente no localStorage
-    localStorage.setItem('games', JSON.stringify(updatedGames));
-
-    // Limpa o formulário
-    setFormData({
-      date: '',
-      opponent: '',
-      ourScore: '',
-      opponentScore: '',
-      category: '',
-    });
-
-    alert('Jogo salvo com sucesso!');
+      // Limpa o formulário
+      setFormData({
+        date: '',
+        opponent: '',
+        ourScore: '',
+        opponentScore: '',
+        category: '',
+      });
+    } catch (error) {
+      console.error('Erro ao salvar o jogo:', error);
+      alert('Erro ao salvar o jogo. Verifique se o servidor backend está rodando.');
+    }
   };
 
   return (
