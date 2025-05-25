@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+🏐 Sistema de Estatísticas Básicas para a Liga Paulista de Handebol
+Este projeto consiste no desenvolvimento de um Sistema de Estatísticas Básicas, voltado para a Liga Paulista de Handebol, com o objetivo de auxiliar a comissão técnica no registro, organização e análise dos dados dos jogos, como número de gols, placares e desempenho geral da equipe.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+O sistema foi desenvolvido no contexto acadêmico para o Projeto Integrador da Universidade Virtual do Estado de São Paulo (UNIVESP), no curso de Engenharia de Computação, com foco no desenvolvimento de soluções web aplicadas.
 
-## Available Scripts
+🚀 Funcionalidades
+✅ Cadastro de partidas
 
-In the project directory, you can run:
+✅ Registro de gols e placares em tempo real
 
-### `npm start`
+✅ Visualização de estatísticas em tabelas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+✅ Gráficos de desempenho das partidas
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+✅ Geração de relatórios simples
 
-### `npm test`
+✅ Interface responsiva e acessível (ajuste de tamanho de texto)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+✅ Armazenamento dos dados em banco de dados MySQL
 
-### `npm run build`
+🛠️ Tecnologias Utilizadas
+Frontend: React, Tailwind CSS, JavaScript
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Backend: Node.js, Express.js (em desenvolvimento)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Banco de Dados: MySQL
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Controle de Versão: Git e GitHub
 
-### `npm run eject`
+Outras: Vite (em substituição ao Create React App, se for o caso), bibliotecas de gráficos e hooks
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+💻 Como Executar o Projeto
+Pré-requisitos:
+Node.js (versão recomendada >= 18)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npm ou yarn
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+MySQL (para integração futura com backend)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Clonar o repositório:
+git clone https://github.com/seu-usuario/seu-repositorio.git
 
-## Learn More
+Instalar as dependências:
+npm install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Executar o projeto em ambiente de desenvolvimento:
+npm run dev
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Acesse no navegador:
+http://localhost:5173
+Se estiver utilizando Vite, caso esteja usando Create React App, será http://localhost:3000)
 
-### Code Splitting
+📂 Estrutura do Projeto
+📁 src
+ ┣ 📁 assets
+ ┣ 📁 components
+ ┣ 📁 pages
+ ┣ 📜 App.jsx
+ ┣ 📜 main.jsx
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+📌 Status do Projeto
+🔧 Em desenvolvimento: funcionalidades básicas do frontend concluídas.
 
-### Analyzing the Bundle Size
+🚀 Backend e integração com banco de dados estão em desenvolvimento.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+📈 Melhorias previstas: filtros avançados, exportação de relatórios e métricas mais detalhadas.
 
-### Making a Progressive Web App
+🏫 Sobre o Projeto
+Este projeto faz parte do Projeto Integrador do curso de Engenharia de Computação da UNIVESP, com o objetivo de aplicar os conhecimentos adquiridos na prática, desenvolvendo uma solução real para uma necessidade existente na Liga Paulista de Handebol.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+🤝 Colaboradores
+Milton Neto – Desenvolvimento e Documentação
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+📜 Licença
+Este projeto é de uso acadêmico e sem fins lucrativos.
